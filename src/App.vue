@@ -20,7 +20,7 @@
             <td>
               ${{coin.current_price}}
             </td>
-            <td>
+            <td :class="[coin.price_change_percentage_24h > 0 ? 'text-success' : 'text-danger']">
               {{coin.price_change_percentage_24h}} %
             </td>
             <td>
