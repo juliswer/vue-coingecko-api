@@ -3,7 +3,7 @@
     <div class="row">
       <h1>Coin Market</h1>
 
-      <input type="text" class="form-control bg-dark text-light rounded-0 border-0 my-4" placeholder="Search Coin" @keyup="searchCoin()">
+      <input type="text" class="form-control bg-dark text-light rounded-0 border-0 my-4" placeholder="Search Coin" @keyup="searchCoin()" v-model="textSearch">
 
       <table class="table table-dark">
         <thead>
@@ -48,7 +48,8 @@ export default {
         'Price',
         'Price Change',
         '24h Volume'
-      ]
+      ],
+      textSearch: ""
     }
   },
   async mounted() {
@@ -59,7 +60,7 @@ export default {
   },
   methods: {
     searchCoin() {
-      console.log('pressed');
+      this.coins = this.coins.filter(coin => coin.name.toLowerCase().includes(this.textSearch.toLowerCase()) || coin.symbol.toLowerCase().includes(this.textSearch.toLowerCase()))
     }
   }
 }
