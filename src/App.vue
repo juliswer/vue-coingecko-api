@@ -3,7 +3,7 @@
     <div class="row">
       <h1>Coin Market</h1>
 
-      <input type="text" class="form-control bg-dark text-light rounded-0 border-0 my-4" placeholder="Search Coin">
+      <input type="text" class="form-control bg-dark text-light rounded-0 border-0 my-4" placeholder="Search Coin" @keyup="searchCoin()">
 
       <table class="table table-dark">
         <thead>
@@ -56,6 +56,11 @@ export default {
     const data = await res.json()
     console.log(data);
     this.coins = data
+  },
+  methods: {
+    searchCoin() {
+      console.log('pressed');
+    }
   }
 }
 </script>
