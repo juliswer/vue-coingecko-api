@@ -11,11 +11,20 @@
         </thead>
         <tbody>
           <tr v-for="(coin, index) in coins" :key="coin.id">
-            <td>{{index + 1}}</td>
+            <td class="text-muted">{{index + 1}}</td>
             <td>
               <img :src="coin.image" style="width: 2rem" class="me-2">
               <span>{{coin.name}}</span>
               <span class="ms-2 text-uppercase text-muted">{{coin.symbol}}</span>
+            </td>
+            <td>
+              ${{coin.current_price}}
+            </td>
+            <td>
+              {{coin.price_change_percentage_24h}} %
+            </td>
+            <td>
+              $ {{coin.total_volume.toLocaleString()}}
             </td>
           </tr>
         </tbody>
