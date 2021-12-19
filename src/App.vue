@@ -6,11 +6,12 @@
       <table class="table table-dark">
         <thead>
           <tr>
-            <th>coin</th>
+            <th v-for="title in titles" :key="title">{{title}}</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="coin in coins" :key="coin.id">
+          <tr v-for="(coin, index) in coins" :key="coin.id">
+            <td>{{index + 1}}</td>
             <td>
               <img :src="coin.image" style="width: 2rem" class="me-2">
               <span>{{coin.name}}</span>
