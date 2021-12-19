@@ -3,7 +3,7 @@
     <div class="row">
       <h1>Hello world</h1>
 
-      <table>
+      <table class="table table-dark">
         <thead>
           <tr>
             <th>coin</th>
@@ -11,7 +11,11 @@
         </thead>
         <tbody>
           <tr v-for="coin in coins" :key="coin.id">
-            {{coin.name}}
+            <td>
+              <img :src="coin.image" style="width: 2rem" class="me-2">
+              <span>{{coin.name}}</span>
+              <span class="ms-2 text-uppercase text-muted">{{coin.symbol}}</span>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -25,7 +29,14 @@ export default {
   name: 'App',
   data() {
     return {
-      coins: []
+      coins: [],
+      titles: [
+        '#',
+        'Coin',
+        'Price',
+        'Price Change',
+        '24h Volume'
+      ]
     }
   },
   async mounted() {
