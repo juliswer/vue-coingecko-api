@@ -1,7 +1,9 @@
 <template>
   <div class="container">
     <div class="row">
-      <h1>Hello world</h1>
+      <h1>Coin Market</h1>
+
+      <input type="text" class="form-control bg-dark text-light rounded-0 border-0 my-4" placeholder="Search Coin">
 
       <table class="table table-dark">
         <thead>
